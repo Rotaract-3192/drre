@@ -1,26 +1,30 @@
 # Nimma DRRE
 
-One-page microsite for **Rotaract District 3192** — District Rotaract Representative Elect (DRRE) introduction and Executive Council nominations for **RY 2027–28**.
+One-page microsite for **Rotaract District 3192** — District Rotaract Representative Elect introduction and Legacy Executive Council nominations for **RY 2027–28**.
 
-> Status: **theme / background preview** only. Full intro + Google Form nominations page comes after design approval.
+**Planned host:** [drre.rotaract3192.org](https://drre.rotaract3192.org)
 
-## Preview locally
+## What’s on the page
+
+1. **Hero** — Nimma DRRE branding (Signal Glow theme)
+2. **Intro** — PP Rtr. Rakshith K Shetty’s journey + portrait
+3. **Nominations** — embedded Google Form (live; form edits appear automatically)
+
+## Run locally
 
 ```bash
-# from repo root
-python3 -m http.server 4317 --bind 127.0.0.1 --directory public
+npm install
+npm run dev -- --port 4321
 ```
 
-Open `http://127.0.0.1:4317` and switch between backgrounds **A / B / C**.
+Open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
-## Stack (planned)
+## Stack
 
-- Static one-page site (Vite or plain static) hosted as a subdomain of the district site
-- District logos from [Rotaract-3192-Website](https://github.com/Rotaract-3192/Rotaract-3192-Website)
-- Embedded Google Form for council nominations
+- Next.js (App Router) · TypeScript · Tailwind CSS
+- District logos from [Rotaract-3192-Website](https://github.com/Rotaract-3192/Rotaract-3192-Website) / rotaract3192.org
 
-## Brand direction
+## Brand
 
-- Title: **Nimma DRRE**
-- Colours: purple + black, yellow/gold accents
-- Subject: PP Rtr. Rakshith K Shetty · DRRE · RY 2027–28
+- Colours: purple + black with gold accents
+- Motifs: subtle rising-signal crest (cinematic Team Legacy vibe, not dominant)
