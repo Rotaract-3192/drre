@@ -1,0 +1,21 @@
+services:
+  drre:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rotaract/drre:latest
+    container_name: drre
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 4321
+      HOSTNAME: 0.0.0.0
+    expose:
+      - "4321"
+    networks:
+      - rotaract
+
+networks:
+  rotaract:
+    external: true
+    name: rotaract
