@@ -112,27 +112,30 @@ export default function Home() {
           </div>
         </section>
 
-        {/* NOMINATIONS — Google Form iframe */}
+        {/*
+          Nominations is a full-viewport stage: compact title + form fills the rest.
+          Form scrolls inside its iframe; page does not need to scroll through the form.
+        */}
         <section
           id="nominations"
-          className="scroll-mt-20 border-t border-[var(--line)]/50 px-3 py-14 sm:px-6 sm:py-20"
+          className="flex min-h-[100dvh] scroll-mt-0 flex-col border-t border-[var(--line)]/50 px-3 pb-4 pt-8 sm:px-6 sm:pb-6 sm:pt-10"
         >
-          <div className="mx-auto w-[min(900px,100%)]">
-            <div className="mb-8 text-center sm:mb-10">
+          <div className="mx-auto flex w-[min(900px,100%)] flex-1 flex-col gap-4 min-h-0">
+            <div className="shrink-0 text-center">
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[var(--gold)]">
                 Legacy Executive Council
               </p>
-              <h2 className="mt-3 font-[family-name:var(--font-bebas)] text-4xl tracking-[0.06em] sm:text-5xl">
+              <h2 className="mt-2 font-[family-name:var(--font-bebas)] text-3xl tracking-[0.06em] sm:text-5xl">
                 Nominations
               </h2>
-              <p className="mx-auto mt-3 max-w-lg text-sm font-light leading-relaxed text-[var(--muted)] sm:text-base">
-                Step forward for District Executive Council RY 2027–28. Complete the form
-                below — it stays on this page.
+              <p className="mx-auto mt-2 max-w-lg text-sm font-light leading-relaxed text-[var(--muted)] sm:text-base">
+                Complete the form below — it stays on this page.
               </p>
-              <div className="gold-rule mx-auto mt-6 w-28" />
             </div>
 
-            <NominationForm />
+            <div className="min-h-0 flex-1">
+              <NominationForm />
+            </div>
           </div>
         </section>
       </main>
