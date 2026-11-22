@@ -1,9 +1,7 @@
 import Image from "next/image";
+import NominationForm from "@/components/NominationForm";
 import SignalCrest from "@/components/SignalCrest";
 import SiteHeader from "@/components/SiteHeader";
-
-const FORM_SRC =
-  "https://docs.google.com/forms/d/e/1FAIpQLSe8pH35-zrMPhHUHNT334troZfEkPApvx945Y2fRhETwdE9xg/viewform?embedded=true";
 
 export default function Home() {
   return (
@@ -134,25 +132,7 @@ export default function Home() {
               <div className="gold-rule mx-auto mt-6 w-28" />
             </div>
 
-            {/*
-              Mobile Safari often cannot scroll inside iframes. Give the embed
-              enough height for the full form so the PAGE scrolls instead, and
-              keep a touch-scroll fallback wrapper.
-            */}
-            <div className="form-shell rounded-2xl p-2 sm:p-4">
-              <div className="form-scroll max-h-none overflow-x-hidden overflow-y-visible rounded-xl bg-white [-webkit-overflow-scrolling:touch]">
-                <iframe
-                  title="Legacy Executive Council Nomination Form"
-                  src={FORM_SRC}
-                  className="block w-full border-0 bg-white"
-                  style={{ height: "3200px", minHeight: "3200px" }}
-                  scrolling="yes"
-                  allow="fullscreen"
-                >
-                  Loading…
-                </iframe>
-              </div>
-            </div>
+            <NominationForm />
           </div>
         </section>
       </main>

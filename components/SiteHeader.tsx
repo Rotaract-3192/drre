@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="relative z-50 w-full">
       <div className="mx-auto w-[min(1100px,calc(100%-1.25rem))] pt-4 sm:pt-5">
-        <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-[rgba(5,3,8,0.55)] px-4 py-3 backdrop-blur-xl sm:gap-4 sm:px-6 sm:py-3.5">
+        <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-[rgba(5,3,8,0.72)] px-4 py-3 backdrop-blur-xl sm:gap-4 sm:px-6 sm:py-3.5">
           <a href="/" className="group relative flex min-w-0 items-center gap-3 no-underline sm:gap-4">
             <div
               className="pointer-events-none absolute inset-0 rounded-full bg-[rgba(124,58,237,0.18)] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"

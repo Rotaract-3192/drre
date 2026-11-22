@@ -160,20 +160,38 @@ body {
   background: rgba(5, 3, 8, 0.72);
   border: 1px solid var(--line);
   backdrop-filter: blur(12px);
-  overflow: visible;
 }
 
-.form-scroll {
-  /* Prefer page scroll; if a host clips height, allow touch scroll inside */
+/*
+  Fixed viewport window for the form — no 3000px blank white.
+  Outer wrapper scrolls (smoother on mobile than iframe-document scroll).
+  Inner iframe height fits one Google Form step + Next/Submit.
+*/
+.form-frame {
+  height: min(72dvh, 680px);
+  min-height: 520px;
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+  touch-action: pan-y;
 }
 
-@media (max-width: 640px) {
-  .form-scroll iframe {
-    /* Tall enough for multi-section Google Form + Next/Submit on phones */
-    height: 3800px !important;
-    min-height: 3800px !important;
+.form-frame iframe {
+  display: block;
+  width: 100%;
+  height: 920px;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .form-frame {
+    height: min(78dvh, 820px);
+    min-height: 600px;
+  }
+
+  .form-frame iframe {
+    height: 980px;
   }
 }
 
