@@ -134,15 +134,24 @@ export default function Home() {
               <div className="gold-rule mx-auto mt-6 w-28" />
             </div>
 
-            <div className="form-shell overflow-hidden rounded-2xl p-2 sm:p-4">
-              <iframe
-                title="Legacy Executive Council Nomination Form"
-                src={FORM_SRC}
-                className="block h-[1800px] w-full rounded-xl bg-white sm:h-[2200px] md:h-[2400px]"
-                loading="lazy"
-              >
-                Loading…
-              </iframe>
+            {/*
+              Mobile Safari often cannot scroll inside iframes. Give the embed
+              enough height for the full form so the PAGE scrolls instead, and
+              keep a touch-scroll fallback wrapper.
+            */}
+            <div className="form-shell rounded-2xl p-2 sm:p-4">
+              <div className="form-scroll max-h-none overflow-x-hidden overflow-y-visible rounded-xl bg-white [-webkit-overflow-scrolling:touch]">
+                <iframe
+                  title="Legacy Executive Council Nomination Form"
+                  src={FORM_SRC}
+                  className="block w-full border-0 bg-white"
+                  style={{ height: "3200px", minHeight: "3200px" }}
+                  scrolling="yes"
+                  allow="fullscreen"
+                >
+                  Loading…
+                </iframe>
+              </div>
             </div>
           </div>
         </section>

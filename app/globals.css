@@ -160,6 +160,21 @@ body {
   background: rgba(5, 3, 8, 0.72);
   border: 1px solid var(--line);
   backdrop-filter: blur(12px);
+  overflow: visible;
+}
+
+.form-scroll {
+  /* Prefer page scroll; if a host clips height, allow touch scroll inside */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 640px) {
+  .form-scroll iframe {
+    /* Tall enough for multi-section Google Form + Next/Submit on phones */
+    height: 3800px !important;
+    min-height: 3800px !important;
+  }
 }
 
 .portrait-glow {
